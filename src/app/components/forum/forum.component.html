@@ -1,0 +1,40 @@
+<div class="forum-display-div" #scrollTop>
+  <div class="display-messages">
+    <table *ngFor="let messagesdb of messagesDb; let i = index">
+      <tr>
+        <td class="name-td">{{ messagesdb }}</td>
+        <td class="message-td">{{ messagesdb }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="display-messages ">
+    <table *ngFor="let message of messages; let i = index">
+      <tr>
+        <td class="name-td">{{ names[i].text }}</td>
+        <td class="message-td">{{ message.text }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="forum-input-div">
+  <mat-form-field class="mat-form">
+    <input
+      [(ngModel)]="name"
+      name="name"
+      matInput
+      placeholder="Write your name"
+      required
+      (keyup)="$event.keyCode == 3 && sendName()"
+    />
+  </mat-form-field>
+  <mat-form-field class="mat-form">
+    <textarea
+      [(ngModel)]="message"
+      name="message"
+      matInput
+      required
+      (keyup)="$event.keyCode == 3 && sendMessage()"
+      (keydown.enter)="sendMessage()"
+    ></textarea>
+  </mat-form-field>
+</div>

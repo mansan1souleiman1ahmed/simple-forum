@@ -1,0 +1,17 @@
+<mat-toolbar class="tool-bar">
+  <span class="span-title"></span>
+  <span> Simple forum</span>
+  <span class="span-title"></span>
+</mat-toolbar>
+<!-- Forum -->
+<mat-grid-list cols="3" rowHeight="2:2">
+  <mat-grid-tile>
+    <app-component-list></app-component-list>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="forum-container">
+      <app-forum></app-forum>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
